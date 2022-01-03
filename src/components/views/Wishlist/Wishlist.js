@@ -1,9 +1,8 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
+import axios from 'axios';
 import Product from '../../Product/Product';
 import '../../../style/Wishlist.css';
-import axios from 'axios';
-
-const useStyle = {};
 
 export default function Wishlist() {
     const [data, setData] = React.useState([]);
@@ -12,10 +11,6 @@ export default function Wishlist() {
         const url = 'http://localhost:8081/getWishlist.do/';
         axios.get(url).then(response => {
             setData(response.data);
-            console.log(response.data);
-            return;
-        }).catch(err => {
-            console.log(err);
         });
     }, []);
 

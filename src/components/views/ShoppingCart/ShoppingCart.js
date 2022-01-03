@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -97,9 +98,10 @@ const productRow = (item) => {
 }
 
 const calcTotalValue = (cartItems) => {
-    var sum = 0;
+    let sum = 0;
     cartItems.map(item => {
-        return sum += item.price
+        sum += item.price
+        return 0;
     });
     return sum;
 }

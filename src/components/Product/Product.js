@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Fav from "../../assets/favorite.svg";
 import NotFav from "../../assets/favorite_border.svg";
-import { useDispatch } from 'react-redux';
 import '../../style/Product.css';
 
 const useStyle = props => ({

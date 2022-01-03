@@ -1,19 +1,17 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import "../../../style/ProductPage.css";
 
-const useStyle = {}
-
-export default function ProductPage(props) {
+export default function ProductPage() {
     
     const dispatch = useDispatch();
-    var productData = useSelector(state => state.currProductObj);
+    const productData = useSelector(state => state.currProductObj);
     const [size, setSize] = React.useState(false);
 
-    const handleUpdateShoeSize = (size) => {
+    const handleUpdateShoeSize = (s) => {
         setSize(true);
-        console.log(size);
-        productData['shoeSize'] = size;
+        productData.shoeSize = s;
     }
 
     const addToCart = () => {

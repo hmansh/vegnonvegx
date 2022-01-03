@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import colors from '../../../utils/themeUtils'
 
@@ -166,7 +167,7 @@ const orderComponent = (styles, show, handleOrderDetails) => {
                     <div style={styles.productImage}></div>
                     <div style={styles.productDetails}>
                         <div>VEJA</div>
-                        <div>CAMPO CHROMEFREE 'EXTRA-WHITE_ULTRAVIOLET_BLACK</div>
+                        <div>CAMPO CHROMEFREE EXTRA-WHITE_ULTRAVIOLET_BLACK</div>
                         <div>SIZE: 6</div>
                         <div>QTY: 1</div>
                         <div>$10,000</div>
