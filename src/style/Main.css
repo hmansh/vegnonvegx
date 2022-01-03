@@ -1,0 +1,9 @@
+.mainContainer {
+  padding: 1rem;
+}
+#main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: "";
+  grid-gap: 1rem;
+}

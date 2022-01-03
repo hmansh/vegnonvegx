@@ -1,0 +1,8 @@
+.wishlist_container {
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+    overflow-x: hidden;
+}

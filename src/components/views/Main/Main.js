@@ -1,14 +1,16 @@
 import React from 'react';
 import Product from '../../Product/Product';
 import axios from 'axios';
+import '../../../style/Main.css';
 
 const useStyle = {
     mainContainer: {
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gridTemplateRows: "",
-        gridGap: '1rem',
-        padding: '1rem',
+        // display: "grid",
+        // gridTemplateColumns: "repeat(4, 1fr)",
+        // gridTemplateRows: "",
+        // gridGap: '1rem',
+        // padding: '1rem',
+        // border: '1px solid red',
     }
 }
 
@@ -28,7 +30,7 @@ export default function Main() {
     }, []);
 
     return (
-        <div style={useStyle.mainContainer}>
+        <div className="mainContainer" id="main">
             {data.map(item => {
                 return <Product data={item}/>
             })}

@@ -1,18 +1,9 @@
 import React from 'react';
 import Product from '../../Product/Product';
+import '../../../style/Wishlist.css';
 import axios from 'axios';
 
-const useStyle = {
-    mainContainer: {
-        overflow: 'scroll',
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gridTemplateRows: "",
-        gridGap: '1rem',
-        padding: '1rem',
-        overflowX: 'hidden',
-    },
-};
+const useStyle = {};
 
 export default function Wishlist() {
     const [data, setData] = React.useState([]);
@@ -29,7 +20,7 @@ export default function Wishlist() {
     }, []);
 
     return (
-        <div style={useStyle.mainContainer}>
+        <div className='wishlist_container'>
             {data.map( item => 
                 <Product data={item}/>
             )}

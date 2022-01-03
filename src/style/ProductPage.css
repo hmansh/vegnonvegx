@@ -1,0 +1,80 @@
+.ppageContainer {
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 1rem;
+}
+#ppage_upperContainer {
+    height: 60%;
+    width: 100%;
+    display: flex;
+}
+#ppage_lowerContainer {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    overflow: scroll;
+    padding: 1rem;
+}
+#ppage_productCrousel{
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+}
+#ppage_productImage {
+    height: 100%;
+}
+#ppage_productDetails {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#ppage_information {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#ppage_company {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 0.007em;
+}
+#ppage_name {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    letter-spacing: 0.007em;
+}
+#ppage_price {
+    font-size: 1.2rem;
+}
+#ppage_desc {
+    font-size: 0.9rem;
+}
+#ppage_sizes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 20%;
+}
+#ppage_sizeButtons {
+    height: 2rem;
+    width: 5rem;
+    background: white;
+    color: black;
+    font-size: 0.7rem;
+    border: 3px solid black;
+}
+#ppage_optionsButtons {}
+#ppage_button {
+    background: black;
+    color: white;
+    width: 100%;
+    height: 2rem;
+    font-size: 0.7rem;
+    margin: 0.5rem 0;
+}
