@@ -27,6 +27,7 @@ const useStyle = props => ({
         paddingBottom: '0.5rem',
         maxWidth: '720px',
         fontSize: '1rem',
+        display: 'flex',
     },
     input: {
         width: '100%',
@@ -101,6 +102,13 @@ const useStyle = props => ({
     },
     costColumn: {
         textAlign: 'right',
+    },
+    bold: {
+        fontWeight: '600',
+        cursor: 'pointer'
+    },
+    alt: {
+        cursor: 'pointer'
     }
 });
 
@@ -153,7 +161,7 @@ const orderComponent = (styles, show, handleOrderDetails) => {
                 <div>PAYMENT SUCCESS</div>
                 <button onClick={handleOrderDetails}>V</button>
             </div>
-            { show && <div>
+            {show && <div>
                 <div style={styles.productContainer}>
                     <div style={styles.productImage}></div>
                     <div style={styles.productDetails}>
@@ -169,27 +177,27 @@ const orderComponent = (styles, show, handleOrderDetails) => {
                     <table style={styles.table}>
                         <tr style={styles.tableRow}>
                             <td style={styles.tableData}>ITEMS</td>
-                            <td style={{...styles.tableData, ...styles.costColumn}}>1</td>
+                            <td style={{ ...styles.tableData, ...styles.costColumn }}>1</td>
                         </tr>
                         <tr>
                             <td style={styles.tableData}>SUBTOTAL</td>
-                            <td style={{...styles.tableData, ...styles.costColumn}}>$9,980</td>
+                            <td style={{ ...styles.tableData, ...styles.costColumn }}>$9,980</td>
                         </tr>
                         <tr>
                             <td style={styles.tableData}>DISCOUNT</td>
-                            <td style={{...styles.tableData, ...styles.costColumn}}>$0</td>
+                            <td style={{ ...styles.tableData, ...styles.costColumn }}>$0</td>
                         </tr>
                         <tr>
                             <td style={styles.tableData}>TAX</td>
-                            <td style={{...styles.tableData, ...styles.costColumn}}>$20</td>
+                            <td style={{ ...styles.tableData, ...styles.costColumn }}>$20</td>
                         </tr>
                         <tr>
                             <td style={styles.tableData}>SHIPPING</td>
-                            <td style={{...styles.tableData, ...styles.costColumn}}>$0</td>
+                            <td style={{ ...styles.tableData, ...styles.costColumn }}>$0</td>
                         </tr>
                         <tr>
                             <td style={styles.tableData}>TOTAL</td>
-                            <td style={{...styles.tableData, ...styles.costColumn}}>$10,000</td>
+                            <td style={{ ...styles.tableData, ...styles.costColumn }}>$10,000</td>
                         </tr>
                     </table>
                 </div>
@@ -200,24 +208,38 @@ const orderComponent = (styles, show, handleOrderDetails) => {
 }
 
 export default function Account() {
+    const [tab, setTab] = React.useState('basic');
+    const [showOrder, setShowOrder] = React.useState(false);
 
-    const [showOrderDetailView, setShowOrderDetailView] = React.useState(false);
+    const handleShowDetailView = () => {
+        setShowOrder(prev => !prev);
+    }
+
     const dummyData = {
         imageLink: 'https://d18o2ueeh72ibb.cloudfront.net/resized/300X/6255/campo-chromefree-extra-white-ultraviolet-black-61cd4ae7f0eb7.jpg',
     }
+
     const styles = useStyle(dummyData);
-    const handleShowDetailView = () => {
-        setShowOrderDetailView(prev => !prev);
+
+    const handleTabChange = (e) => {
+        setTab(e);
     }
 
     return (
         <div style={styles.mainContainer}>
-            <div style={styles.title}>BASIC DETAILS / ORDER HISTORY</div>
-            {basicDetails(styles)}
-            <div style={styles.title}>ADDRESS</div>
-            {addressDetails(styles)}
-            {orderComponent(styles, showOrderDetailView, handleShowDetailView)}
-            {orderComponent(styles, showOrderDetailView, handleShowDetailView)}
+            <div style={styles.title}>
+                <div onClick={() => handleTabChange('basic')}
+                    style={tab === 'basic' ? styles.bold : styles.alt}
+                >BASIC DETAILS</div>
+                /
+                <div onClick={() => handleTabChange('order')}
+                    style={tab === 'order' ? styles.bold : styles.alt}
+                >ORDER DETAILS</div>
+            </div>
+            {tab === 'basic' && basicDetails(styles)}
+            {tab === 'basic' && <div style={styles.title}>ADDRESS</div>}
+            {tab === 'basic' && addressDetails(styles)}
+            {tab === 'order' && orderComponent(styles, showOrder, handleShowDetailView)}
         </div>
     )
 }
