@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Fav from "../../assets/favorite.svg";
 import NotFav from "../../assets/favorite_border.svg";
+import { useDispatch } from 'react-redux';
 
 const useStyle = props => ({
     productContainer: {
@@ -39,6 +40,11 @@ const useStyle = props => ({
     },
     productName: {
         textAlign: 'center',
+        maxHeight: '1.5rem',
+        overflow:"hidden",
+        whiteSpace:"nowrap",
+        textOverflow:"ellipsis",
+        width:"100%",
     },
     sizes: {
         textAlign: 'center',
@@ -58,27 +64,25 @@ const useStyle = props => ({
 
 
 export default function Product(props) {
-
+    
+    const dispatch = useDispatch();
     const style = useStyle(props.data);
-    React.useEffect(() => {
-        console.log(props);
-    }, []);
 
     return (
-        <Link to={{pathname: '/product',
-                    query: {...props.data}}} className='reactLink'>
             <div style={style.productContainer} className='productContainer'>
-                <div style={style.productImageContainer}></div>
+                <Link onClick={() => dispatch({type:"SET_PRODUCT_OBJ", payload: props.data})} 
+                    to='/product' className='reactLink'>
+                    <div style={style.productImageContainer}></div>
+                </Link>
                 <div style={style.productDetailsContainerLower}>
                     <div style={style.companyName}>{props.data.company}</div>
                     <div style={style.productName}>{props.data.name}</div>
                     <div style={style.priceAndWishlist}>
-                        <div style={style.productPriceHover}>${props.data.price}</div>
+                        <div style={style.productPriceHover}>₹{props.data.price}</div>
                         <div style={style.wishlistLogo}></div>
                     </div>
                     {/* <div style={style.sizes}>{dummyData.sizes}</div> */}
                 </div>
             </div>
-        </Link>
     )
 }

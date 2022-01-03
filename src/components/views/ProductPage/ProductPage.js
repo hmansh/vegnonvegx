@@ -1,5 +1,6 @@
 import React from 'react';
 import Product from '../../Product/Product';
+import { useSelector, useDispatch } from 'react-redux';
 
 const useStyle = {
     mainContainer: {
@@ -23,7 +24,11 @@ const useStyle = {
     },
     productCrousel: {
         height: '100%',
-        width: '100%'
+        width: '100%',
+        padding: '1rem'
+    },
+    productImage : {
+        height: '100%'
     },
     productDetails: {
         height: '100%',
@@ -81,20 +86,34 @@ const useStyle = {
 }
 
 export default function ProductPage(props) {
-    React.useEffect(() => {
-        console.log(props);
-    }, []);
+    
+    const dispatch = useDispatch();
+    var productData = useSelector(state => state.currProductObj);
+    const [size, setSize] = React.useState(false);
+
+    const handleUpdateShoeSize = (size) => {
+        setSize(true);
+        console.log(size);
+        productData['shoeSize'] = size;
+    }
+
+    const addToCart = () => {
+        if (size){
+            dispatch({type: "ADD_TO_CART", payload: productData});
+        }
+    }
+
     return (
         <div style={useStyle.mainContainer}>
             <div style={useStyle.upperContainer}>
                 <div style={useStyle.productCrousel}>
-
+                    <img src={productData.imgUrl} style={useStyle.productImage} alt="imag"/>
                 </div>
                 <div style={useStyle.productDetails}>
                     <div style={useStyle.information}>
-                        <div style={useStyle.companyName}>Nike</div>
-                        <div style={useStyle.productName}>Air Force 1 2020</div>
-                        <div style={useStyle.productPrice}>$7,999</div>
+                        <div style={useStyle.companyName}>{productData.company}</div>
+                        <div style={useStyle.productName}>{productData.name}</div>
+                        <div style={useStyle.productPrice}>₹{productData.price}</div>
                         <div style={useStyle.productDesc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                         Dignissimos tempore similique totam. Nam nesciunt libero 
                         consequuntur ipsam optio sint et quo culpa, error 
@@ -105,28 +124,17 @@ export default function ProductPage(props) {
                         laudantium maiores, deserunt corporis aspernatur nemo dolorem.</div>
                     </div>
                     <div style={useStyle.sizes}>
-                        {[5, 6, 7, 8, 9, 10, 11, 12].map(item => {
-                            return <button style={useStyle.sizeButtons}>{item}</button>
+                        {productData.sizes.split(",").map(item => {
+                            return <button onClick={() => handleUpdateShoeSize(item)} style={useStyle.sizeButtons}>{item === '' ? 'OUT OF STOCK' : item}</button>
                         })}
                     </div>
                     <div style={useStyle.options}>
                         <button style={useStyle.button}>Wishlist</button>
-                        <button style={useStyle.button}>Add to Cart</button>
+                        <button style={useStyle.button} onClick={addToCart}>Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div style={useStyle.lowerContainer}>
-                {/* <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/> */}
-            </div>
+            {/* <div style={useStyle.lowerContainer}></div> */}
         </div>
     )
 }

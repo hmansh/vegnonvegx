@@ -1,9 +1,9 @@
 import React from 'react';
 import Product from '../../Product/Product';
+import axios from 'axios';
 
 const useStyle = {
     mainContainer: {
-        border: '1px solid red',
         overflow: 'scroll',
         display: "grid",
         gridTemplateColumns: "repeat(4, 1fr)",
@@ -15,10 +15,23 @@ const useStyle = {
 };
 
 export default function Wishlist() {
+    const [data, setData] = React.useState([]);
+
+    React.useEffect(() => {
+        const url = 'http://localhost:8081/getWishlist.do/';
+        axios.get(url).then(response => {
+            setData(response.data);
+            console.log(response.data);
+            return;
+        }).catch(err => {
+            console.log(err);
+        });
+    }, []);
+
     return (
         <div style={useStyle.mainContainer}>
-            {[1, 2, 4, 5, 7, 8, 9].map( item => 
-                <Product/>
+            {data.map( item => 
+                <Product data={item}/>
             )}
         </div>
     )
