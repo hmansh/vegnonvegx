@@ -7,7 +7,7 @@ export default function Main() {
   const [data, setData] = React.useState([{}]);
 
   React.useEffect(() => {
-    const url = 'http://localhost:8081/getProductList.do/';
+    const url = 'http://localhost:8081/getProductList.do';
     axios.get(url).then((response) => {
       setData(response.data);
     });

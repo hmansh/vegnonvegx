@@ -7,7 +7,7 @@ export default function Wishlist() {
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {
-    const url = 'http://localhost:8081/getWishlist.do/';
+    const url = 'http://localhost:8081/getWishlistItems.do/';
     axios.get(url).then((response) => {
       setData(response.data);
     });
