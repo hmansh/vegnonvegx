@@ -8,10 +8,10 @@ const productRow = (item) => {
       <div id="scart_headingDiv">
         <img src={item.imgUrl} id="scart_imageContainer" alt="ima" />
       </div>
-      <div id="scart_headingDiv" >{item.name}</div>
-      <div id="scart_headingDiv" >₹{item.price}</div>
-      <div id="scart_headingDiv" >{item.shoeSize}</div>
-      <div id="scart_headingDiv" >₹{item.price}</div>
+      <div id="scart_headingDiv">{item.name}</div>
+      <div id="scart_headingDiv">₹{item.price}</div>
+      <div id="scart_headingDiv">{item.shoeSize}</div>
+      <div id="scart_headingDiv">₹{item.price}</div>
     </div>
   );
 };
@@ -50,53 +50,35 @@ export default function ShoppingCart() {
           <table id="scart_table">
             <tr id="scart_tableRow">
               <td id="scart_tableData">ITEMS</td>
-              <td id="scart_costColumn" >
-                {cartItems.length}
-              </td>
+              <td id="scart_costColumn">{cartItems.length}</td>
             </tr>
             <tr>
-              <td  id="scart_tableData">SUBTOTAL</td>
-              <td id="scart_costColumn">
-                ₹{totalAmount}
-              </td>
+              <td id="scart_tableData">SUBTOTAL</td>
+              <td id="scart_costColumn">₹{totalAmount}</td>
             </tr>
             <tr>
-              <td  id="scart_tableData">DISCOUNT</td>
-              <td id="scart_costColumn">
-                ₹0
-              </td>
+              <td id="scart_tableData">DISCOUNT</td>
+              <td id="scart_costColumn">₹0</td>
             </tr>
             <tr>
               <td id="scart_tableData">TAX</td>
-              <td id="scart_costColumn">
-                ₹{totalTax}
-              </td>
+              <td id="scart_costColumn">₹{totalTax}</td>
             </tr>
             <tr>
               <td id="scart_tableData">SHIPPING</td>
-              <td id="scart_costColumn">
-                ₹0
-              </td>
+              <td id="scart_costColumn">₹0</td>
             </tr>
             <tr>
               <td id="scart_tableData">TOTAL</td>
-              <td id="scart_costColumn">
-                ₹{totalAmount + totalTax}
-              </td>
+              <td id="scart_costColumn">₹{totalAmount + totalTax}</td>
             </tr>
           </table>
         </div>
         <div id="scart_redeemContainer">
-          <input
-            type="text"
-            placeholder="ENTER REDEEM CODE"
-            id="scart_input"
-          />
-          <button id="scart_redeemButton">
-            APPLY
-          </button>
+          <input type="text" placeholder="ENTER REDEEM CODE" id="scart_input" />
+          <button id="scart_redeemButton">APPLY</button>
         </div>
-        <button id="scart_button" >CHECKOUT</button>
+        <button id="scart_button">CHECKOUT</button>
       </div>
     </div>
   );

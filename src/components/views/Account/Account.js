@@ -196,8 +196,7 @@ export default function Account() {
   const [tab, setTab] = React.useState("basic");
   const [showOrder, setShowOrder] = React.useState(false);
   const dispatch = useDispatch();
-  const userDetails = useSelector((state) => state.userDetails);
-  const userAddress = useSelector((state) => state.userAddress);
+  const user = useSelector((state) => state.user);
 
   React.useEffect(() => {
     if (true) {
@@ -248,9 +247,9 @@ export default function Account() {
           ORDER DETAILS
         </div>
       </div>
-      {tab === "basic" && basicDetails(userDetails)}
+      {tab === "basic" && basicDetails(user.details)}
       {tab === "basic" && <div id="account_title">ADDRESS</div>}
-      {tab === "basic" && addressDetails(userAddress)}
+      {tab === "basic" && addressDetails(user.address)}
       {tab === "order" &&
         orderComponent(styles, showOrder, handleShowDetailView)}
     </div>

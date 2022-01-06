@@ -2,6 +2,7 @@ const initialState = {
   currProductObj: {},
   userSignedIn: false,
   data: [],
+  loading: true,
   tempUser: {
     cartItems: []
   },
@@ -22,6 +23,11 @@ export default function rootReducer(state = initialState, actions) {
       return  {
         ...state,
         data: actions.payload
+      }
+    case "LOADING_COMPLETE":
+      return {
+        ...state,
+        loading: false
       }
     case "SET_PRODUCT_OBJ":
       return {
