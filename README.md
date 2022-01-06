@@ -3,7 +3,7 @@ This project is built as a alternative for vegnonveg.com . Which is a sneaker ec
 
 ### `Tasks`
 
-[ ] Signin option
+- [ ] Signin option
 
 [ ] Finalize the shopping cart
 
