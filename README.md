@@ -5,33 +5,33 @@ This project is built as a alternative for vegnonveg.com . Which is a sneaker ec
 
 - [ ] Signin option
 
-[ ] Finalize the shopping cart
+- [ ] Finalize the shopping cart
 
-[ ] Modal for cart
+- [ ] Modal for cart
 
-[ ] Checkout view
+- [ ] Checkout view
 
-[ ] filter options
+- [ ] filter options
 
-[ ] Sort Options
+- [ ] Sort Options
 
-[ ] Add Search
+- [ ] Add Search
 
-[ ] Add verification for phone & email
+- [ ] Add verification for phone & email
 
-[ ] Fix font for input
+- [ ] Fix font for input
 
-[ ] Allow updation of user details & address
+- [ ] Allow updation of user details & address
 
-[ ] Add user name at top of Account view
+- [ ] Add user name at top of Account view
 
-[ ] Fix error for direct ProductPage view launch
+- [ ] Fix error for direct ProductPage view launch
 
-[ ] Add default address check
+- [ ] Add default address check
 
-[ ] Add/Remove items from wishlist
+- [ ] Add/Remove items from wishlist
 
-[ ] Modify api for db write 
+- [ ] Modify api for db write 
  
 // More to be added.
  
