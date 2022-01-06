@@ -19,3 +19,8 @@ This project is built as a alternative for vegnonveg.com . Which is a sneaker ec
  [ ] Modify api for db write 
  
  // More to be added.
+ 
+ ### Feature "Feature | name_of_feature, view_name"
+ ### Code "Code | reason_for_check"
+ ### Readme "Updated Readme"
+ 
