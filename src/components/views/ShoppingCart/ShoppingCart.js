@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "../../../style/ShoppingCart.css";
+import { currencyFormatter } from "../../../utils/themeUtils";
 
 const productRow = (item) => {
   return (
@@ -9,9 +10,9 @@ const productRow = (item) => {
         <img src={item.imgUrl} id="scart_imageContainer" alt="ima" />
       </div>
       <div id="scart_headingDiv">{item.name}</div>
-      <div id="scart_headingDiv">₹{item.price}</div>
+      <div id="scart_headingDiv">₹{currencyFormatter(item.price)}</div>
       <div id="scart_headingDiv">{item.shoeSize}</div>
-      <div id="scart_headingDiv">₹{item.price}</div>
+      <div id="scart_headingDiv">₹{currencyFormatter(item.price)}</div>
     </div>
   );
 };
@@ -54,23 +55,23 @@ export default function ShoppingCart() {
             </tr>
             <tr>
               <td id="scart_tableData">SUBTOTAL</td>
-              <td id="scart_costColumn">₹{totalAmount}</td>
+              <td id="scart_costColumn">₹{currencyFormatter(totalAmount)}</td>
             </tr>
             <tr>
               <td id="scart_tableData">DISCOUNT</td>
-              <td id="scart_costColumn">₹0</td>
+              <td id="scart_costColumn">₹{currencyFormatter(0)}</td>
             </tr>
             <tr>
               <td id="scart_tableData">TAX</td>
-              <td id="scart_costColumn">₹{totalTax}</td>
+              <td id="scart_costColumn">₹{currencyFormatter(totalTax)}</td>
             </tr>
             <tr>
               <td id="scart_tableData">SHIPPING</td>
-              <td id="scart_costColumn">₹0</td>
+              <td id="scart_costColumn">₹{currencyFormatter(0)}</td>
             </tr>
             <tr>
               <td id="scart_tableData">TOTAL</td>
-              <td id="scart_costColumn">₹{totalAmount + totalTax}</td>
+              <td id="scart_costColumn">₹{currencyFormatter(totalAmount + totalTax)}</td>
             </tr>
           </table>
         </div>

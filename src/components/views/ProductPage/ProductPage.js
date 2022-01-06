@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../../../style/ProductPage.css";
+import { currencyFormatter } from "../../../utils/themeUtils";
 
 export default function ProductPage() {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ export default function ProductPage() {
           <div id="ppage_information">
             <div id="ppage_company">{productData.company}</div>
             <div id="ppage_name">{productData.name}</div>
-            <div id="ppage_price">₹{productData.price}</div>
+            <div id="ppage_price">₹{currencyFormatter(productData.price)}</div>
             <div id="ppage_desc">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Dignissimos tempore similique totam. Nam nesciunt libero

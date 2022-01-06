@@ -19,6 +19,8 @@ body {
 }
 button {
   text-transform: uppercase;
+  outline: none;
+  border: none;
 }
 ::-webkit-scrollbar {
   width: 10px;

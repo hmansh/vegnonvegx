@@ -7,3 +7,11 @@
   grid-template-rows: "";
   grid-gap: 1rem;
 }
+#main_loading {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  right: 50%;
+}

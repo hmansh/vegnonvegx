@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import Product from "../../Product/Product";
 import "../../../style/Main.css";
-import Loading from "../../../assets/loader.svg";
+import Loading from "../../../assets/spinner.gif";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Main() {
@@ -28,7 +28,7 @@ export default function Main() {
   return (
     <div className="mainContainer" id="main">
       {loading
-        ? <img src={Loading} alt="loading" />
+        ? <img src={Loading} id="main_loading" alt="loading" />
         : data.map((item) => {
             return <Product data={item} />;
           })}

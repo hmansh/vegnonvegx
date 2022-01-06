@@ -3,7 +3,7 @@ import Logo from "../../assets/logo.svg";
 import Favorite from "../../assets/favorite.svg";
 import Person from "../../assets/person.svg";
 import Bag from "../../assets/shopping_bag.svg";
-import colors from './../../utils/themeUtils';
+import { colors } from './../../utils/themeUtils';
 import { Link } from 'react-router-dom';
 
 const useStyles = {
@@ -16,6 +16,7 @@ const useStyles = {
     logoContainer: {
         position: "absolute",
         right: "50%",
+        left: "48%",
         top: '2%',
         backgroundImage: `url(${Logo})`,
         backgroundRepeat: "no-repeat",

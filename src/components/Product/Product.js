@@ -5,6 +5,7 @@ import { PropTypes } from 'prop-types';
 import Fav from '../../assets/favorite.svg';
 import NotFav from '../../assets/favorite_border.svg';
 import '../../style/Product.css';
+import { currencyFormatter } from '../../utils/themeUtils';
 
 const useStyle = (data) => ({
   productImageContainer: {
@@ -18,7 +19,6 @@ const useStyle = (data) => ({
     backgroundRepeat: 'no-repeat'
   }
 });
-
 export default function Product(props) {
   const dispatch = useDispatch();
   const { data } = props;
@@ -36,7 +36,7 @@ export default function Product(props) {
         <div id="product_companyName">{data.company}</div>
         <div id="product_productName">{data.name}</div>
         <div id="product_priceWishlist">
-          <div id="product_price">₹{data.price}</div>
+          <div id="product_price">₹{currencyFormatter(data.price)}</div>
           <div style={style.wishlistLogo} id="product_wishlist"></div>
         </div>
         {/* <div style={style.sizes}>{dummyData.sizes}</div> */}
