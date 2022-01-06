@@ -1,0 +1,72 @@
+.scart_container {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+}
+#scart_cartContainer {
+    margin: auto;
+    max-width: 720px;
+    padding: 1rem;
+}
+#scart_cartHeading {
+    display: flex;
+    justify-content: space-between;
+}
+#scart_productContainer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    padding: 1rem 0;
+}
+#scart_headingDiv {
+    width: 9rem;
+}
+#scart_div{}
+#scart_divider {
+    border-bottom: 2px dashed grey;
+}
+#scart_table {
+    width: 100%;
+}
+#scart_tableRow {}
+#scart_tableData {}
+#scart_costColumn {
+    text-align: right;
+}
+#scart_button {
+    background: black;
+    color: white;
+    height: 2rem;
+    width: 100%;
+    font-size: 0.7rem;
+    margin: 0.5rem 0;
+}
+#scart_redeemContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#scart_redeemButton {
+    max-width: 20%;
+    background: black;
+    color: white;
+    height: 2rem;
+    width: 100%;
+    font-size: 0.7rem;
+    margin: 0.5rem 0;
+}
+#scart_input {
+    width: 75%;
+    height: 2rem;
+    margin: 0.5rem 0;
+    padding: 10px;
+    font-size: 0.7rem;
+    border: none;
+    color: black;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: white;
+}
+#scart_imageContainer {
+    height: 5rem;
+}

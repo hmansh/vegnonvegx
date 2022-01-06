@@ -196,28 +196,19 @@ export default function Account() {
   const [tab, setTab] = React.useState("basic");
   const [showOrder, setShowOrder] = React.useState(false);
   const dispatch = useDispatch();
-  const userAddressPresent = useSelector((state) => state.userAddressPresent);
-  const userDetailsPresent = useSelector((state) => state.userDetailsPresent);
   const userDetails = useSelector((state) => state.userDetails);
   const userAddress = useSelector((state) => state.userAddress);
 
   React.useEffect(() => {
-    if (!userDetailsPresent || !userAddressPresent) {
+    if (true) {
       axios
         .get("http://localhost:8081/getUserDetails.do/")
         .then((response) => {
-          if (!userDetailsPresent) {
-            dispatch({
-              type: "SET_USER_DETAILS",
-              payload: response.data.details,
-            });
-          }
-          if (!userAddressPresent) {
-            dispatch({
-              type: "SET_USER_ADDRESS",
-              payload: response.data.address,
-            });
-          }
+          console.log(response.data[0])
+          dispatch({
+            type: "SET_USER_DETAILS",
+            payload: response.data['0'],
+          });
         })
         .catch((error) => {
           console.log(error);

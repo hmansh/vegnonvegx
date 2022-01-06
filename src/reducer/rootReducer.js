@@ -1,38 +1,62 @@
 const initialState = {
   currProductObj: {},
-  cartItems: [],
   userSignedIn: false,
-  userDetailsPresent: false,
-  userDetails: {},
-  userAddressPresent: false,
-  userAddress: {},
+  data: [],
+  tempUser: {
+    cartItems: []
+  },
+  user: {
+    orderDetails: [],
+    cartItems: [],
+    wishlistItems: [],
+    address: {},
+    details: {},
+    detailsFetched: false,
+    detailsUpdated: false,
+  }
 };
 
 export default function rootReducer(state = initialState, actions) {
   switch (actions.type) {
+    case "SET_DATA":
+      return  {
+        ...state,
+        data: actions.payload
+      }
     case "SET_PRODUCT_OBJ":
       return {
         ...state,
         currProductObj: actions.payload,
       };
-    case "RESET_PRODUCT_OBJ":
+    case "RESET_OBJ":
       return state;
     case "SET_USER_DETAILS":
       return {
         ...state,
-        userDetailsPresent: true,
-        userDetails: actions.payload,
+        user: {
+          orderDetails: [...actions.payload.orders],
+          cartItems: [...actions.payload.cart_items],
+          wishlistItems: [...actions.payload.wishlist_items],
+          address: actions.payload.address,
+          details: actions.payload.details,
+          detailsFetched: true,
+          detailsUpdated: false,
+        }
       };
-    case "SET_USER_ADDRESS":
+    case "ADD_TO_CART_TEMP_USER":
       return {
         ...state,
-        userAddressPresent: true,
-        userAddress: actions.payload,
+        tempUser: {
+          cartItems: [...state.cartItems, actions.payload],
+        }
       };
-    case "ADD_TO_CART":
+    case "ADD_TO_CART_USER": 
       return {
         ...state,
-        cartItems: [...state.cartItems, actions.payload],
+        user: {
+          ...state.user,
+          cartItems: [...state.cartItems, actions.payload],
+        }
       };
     case "SIGNED_IN":
       return {

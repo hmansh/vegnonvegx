@@ -2,15 +2,21 @@ import React from "react";
 import axios from "axios";
 import Product from "../../Product/Product";
 import "../../../style/Main.css";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Main() {
-  const [data, setData] = React.useState([{}]);
+  const dispatch = useDispatch();
+  const data = useSelector(state => state.data);
 
   React.useEffect(() => {
     const url = "http://localhost:8081/getProductList.do";
-    axios.get(url).then((response) => {
-      setData(response.data);
-    });
+    if (data.length === 0){
+      axios.get(url).then((response) => {
+        dispatch({type: "SET_DATA", payload: response.data});
+      }).catch(error => {
+        console.log("Error", error);
+      });
+    }
   }, []);
 
   return (

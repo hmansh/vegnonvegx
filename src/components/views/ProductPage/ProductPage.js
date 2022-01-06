@@ -5,15 +5,15 @@ import "../../../style/ProductPage.css";
 export default function ProductPage() {
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.currProductObj);
-  const [size, setSize] = React.useState(false);
+  const [size, setSize] = React.useState({selected: false, size: null});
 
   const handleUpdateShoeSize = (s) => {
-    setSize(true);
+    setSize({selected : true, size: s});
     productData.shoeSize = s;
   };
 
   const addToCart = () => {
-    if (size) {
+    if (size.selected) {
       dispatch({ type: "ADD_TO_CART", payload: productData });
     }
   };
@@ -57,7 +57,7 @@ export default function ProductPage() {
               Wishlist
             </button>
             <button className="btn" id="ppage_button" onClick={addToCart}>
-              Add to Cart
+              Add to Cart {size.selected && `( ${size?.size} )`}
             </button>
           </div>
         </div>
