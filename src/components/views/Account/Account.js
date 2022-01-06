@@ -1,68 +1,144 @@
-import React from 'react';
+import React from "react";
 import "../../../style/Account.css";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 
 const useStyle = (props) => ({
   productImage: {
-    width: '30%',
+    width: "30%",
     backgroundImage: `url(${props.imageLink})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center'
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
   },
   bold: {
-    fontWeight: '600',
-    cursor: 'pointer'
+    fontWeight: "600",
+    cursor: "pointer",
   },
   alt: {
-    cursor: 'pointer'
-  }
+    cursor: "pointer",
+  },
 });
 
-const basicDetails = (styles) => {
+const basicDetails = (userDetails) => {
   return (
-    <div id='account_joinContainer'>
-      <div id='account_name'>
-        <input id='account_input_half' type="text" disabled placeholder="HIMANSHU" />
-        <input id='account_input_half' type="text" disabled placeholder="." />
+    <div id="account_joinContainer">
+      <div id="account_name">
+        <input
+          id="account_input_half"
+          type="text"
+          disabled
+          placeholder="FIRST NAME"
+          value={userDetails?.first_name}
+        />
+        <input
+          id="account_input_half"
+          type="text"
+          disabled
+          placeholder="LAST NAME"
+          value={userDetails?.last_name}
+        />
       </div>
-      <input type="text" disabled placeholder="himanshucasillas@gmail.com" id='account_input' />
-      <input type="text" disabled placeholder="+91-9677936677" id='account_input' />
-      <button id='account_button'>UPDATE</button>
+      <input
+        type="text"
+        disabled
+        placeholder="EMAIL ID"
+        value={userDetails?.email_id}
+        id="account_input"
+      />
+      <input
+        type="text"
+        disabled
+        placeholder="PHONE NUMBER"
+        value={userDetails?.phone_number}
+        id="account_input"
+      />
+      <button id="account_button">UPDATE</button>
     </div>
   );
 };
 
-const addressDetails = (styles) => {
+const addressDetails = (userAddress) => {
   return (
-    <div id='account_signinContainer'>
-      <div id='account_name'>
-        <input id='account_input_half' type="text" placeholder="COUNTRY *" />
-        <input id='account_input_half' type="text" placeholder="STATE *" />
+    <div id="account_signinContainer">
+      <div id="account_name">
+        <input
+          id="account_input_half"
+          type="text"
+          placeholder="COUNTRY *"
+          value={userAddress?.country}
+        />
+        <input
+          id="account_input_half"
+          type="text"
+          placeholder="STATE *"
+          value={userAddress?.state}
+        />
       </div>
-      <div id='account_name'>
-        <input id='account_input_half' type="text" placeholder="FIRST NAME *" />
-        <input id='account_input_half' type="text" placeholder="LAST NAME *" />
+      <div id="account_name">
+        <input
+          id="account_input_half"
+          type="text"
+          placeholder="FIRST NAME *"
+          value={userAddress?.first_name}
+        />
+        <input
+          id="account_input_half"
+          type="text"
+          placeholder="LAST NAME *"
+          value={userAddress?.last_name}
+        />
       </div>
-      <div id='account_name'>
-        <input id='account_input_half' type="text" placeholder="COMPANY" />
-        <input id='account_input_half' type="text" placeholder="MOBILE" />
+      <div id="account_name">
+        <input
+          id="account_input_half"
+          type="text"
+          placeholder="COMPANY"
+          value={userAddress?.company_name}
+        />
+        <input
+          id="account_input_half"
+          type="text"
+          placeholder="MOBILE"
+          value={userAddress?.mobile_number}
+        />
       </div>
-      <input id='account_input' type="text" placeholder="ADDRESS 1 *" />
-      <input id='account_input' type="text" placeholder="ADDRESS 2" />
-      <div id='account_name'>
-        <input id='account_input_half' type="text" placeholder="CITY" />
-        <input id='account_input_half' type="number" placeholder="PINCODE" />
+      <input
+        id="account_input"
+        type="text"
+        placeholder="ADDRESS 1 *"
+        value={userAddress?.address_1}
+      />
+      <input
+        id="account_input"
+        type="text"
+        placeholder="ADDRESS 2"
+        value={userAddress?.address_2}
+      />
+      <div id="account_name">
+        <input
+          id="account_input_half"
+          type="text"
+          placeholder="CITY"
+          value={userAddress?.city}
+        />
+        <input
+          id="account_input_half"
+          type="number"
+          placeholder="PINCODE"
+          value={userAddress?.pincode}
+        />
       </div>
-      <button id='account_button'>SUBMIT</button>
+      <button id="account_button">SUBMIT</button>
     </div>
   );
 };
 
 const orderComponent = (styles, show, handleOrderDetails) => {
   return (
-    <div id='account_orderContainer'>
-      <div id='account_orderComponent'>
-        <div id='account_orderDetailsRow'>
+    <div id="account_orderContainer">
+      <div id="account_orderComponent">
+        <div id="account_orderDetailsRow">
           <div>2022-01-02 02:10:03</div>
           <div>$10,000</div>
           <div>PAYMENT SUCCESS</div>
@@ -70,9 +146,9 @@ const orderComponent = (styles, show, handleOrderDetails) => {
         </div>
         {show && (
           <div>
-            <div id='account_productContainer'>
-              <div style={styles.productImage} id='account_productImage'></div>
-              <div id='account_productDetails'>
+            <div id="account_productContainer">
+              <div style={styles.productImage} id="account_productImage"></div>
+              <div id="account_productDetails">
                 <div>VEJA</div>
                 <div>CAMPO CHROMEFREE EXTRA-WHITE_ULTRAVIOLET_BLACK</div>
                 <div>SIZE: 6</div>
@@ -80,32 +156,32 @@ const orderComponent = (styles, show, handleOrderDetails) => {
                 <div>$10,000</div>
               </div>
             </div>
-            <div id='account_divider'></div>
-            <div id='account_tableContainer'>
-              <table id='account_table'>
-                <tr id='account_tableRow'>
-                  <td id='account_tableData'>ITEMS</td>
-                  <td id='account_costColumn' >1</td>
+            <div id="account_divider"></div>
+            <div id="account_tableContainer">
+              <table id="account_table">
+                <tr id="account_tableRow">
+                  <td id="account_tableData">ITEMS</td>
+                  <td id="account_costColumn">1</td>
                 </tr>
                 <tr>
-                  <td id='account_tableData'>SUBTOTAL</td>
-                  <td id='account_costColumn'>$9,980</td>
+                  <td id="account_tableData">SUBTOTAL</td>
+                  <td id="account_costColumn">$9,980</td>
                 </tr>
                 <tr>
-                  <td id='account_tableData'>DISCOUNT</td>
-                  <td id='account_costColumn'>$0</td>
+                  <td id="account_tableData">DISCOUNT</td>
+                  <td id="account_costColumn">$0</td>
                 </tr>
                 <tr>
-                  <td id='account_tableData'>TAX</td>
-                  <td id='account_costColumn' >$20</td>
+                  <td id="account_tableData">TAX</td>
+                  <td id="account_costColumn">$20</td>
                 </tr>
                 <tr>
-                  <td id='account_tableData'>SHIPPING</td>
-                  <td id='account_costColumn'>$0</td>
+                  <td id="account_tableData">SHIPPING</td>
+                  <td id="account_costColumn">$0</td>
                 </tr>
                 <tr>
-                  <td id='account_tableData' >TOTAL</td>
-                  <td id='account_costColumn'>$10,000</td>
+                  <td id="account_tableData">TOTAL</td>
+                  <td id="account_costColumn">$10,000</td>
                 </tr>
               </table>
             </div>
@@ -117,8 +193,37 @@ const orderComponent = (styles, show, handleOrderDetails) => {
 };
 
 export default function Account() {
-  const [tab, setTab] = React.useState('basic');
+  const [tab, setTab] = React.useState("basic");
   const [showOrder, setShowOrder] = React.useState(false);
+  const dispatch = useDispatch();
+  const userAddressPresent = useSelector((state) => state.userAddressPresent);
+  const userDetailsPresent = useSelector((state) => state.userDetailsPresent);
+  const userDetails = useSelector((state) => state.userDetails);
+  const userAddress = useSelector((state) => state.userAddress);
+
+  React.useEffect(() => {
+    if (!userDetailsPresent || !userAddressPresent) {
+      axios
+        .get("http://localhost:8081/getUserDetails.do/")
+        .then((response) => {
+          if (!userDetailsPresent) {
+            dispatch({
+              type: "SET_USER_DETAILS",
+              payload: response.data.details,
+            });
+          }
+          if (!userAddressPresent) {
+            dispatch({
+              type: "SET_USER_ADDRESS",
+              payload: response.data.address,
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, []);
 
   const handleShowDetailView = () => {
     setShowOrder((prev) => !prev);
@@ -126,7 +231,7 @@ export default function Account() {
 
   const dummyData = {
     imageLink:
-      'https://d18o2ueeh72ibb.cloudfront.net/resized/300X/6255/campo-chromefree-extra-white-ultraviolet-black-61cd4ae7f0eb7.jpg'
+      "https://d18o2ueeh72ibb.cloudfront.net/resized/300X/6255/campo-chromefree-extra-white-ultraviolet-black-61cd4ae7f0eb7.jpg",
   };
 
   const styles = useStyle(dummyData);
@@ -136,24 +241,27 @@ export default function Account() {
   };
 
   return (
-    <div className='account_container'>
-      <div id='account_title'>
+    <div className="account_container">
+      <div id="account_title">
         <div
-          onClick={() => handleTabChange('basic')}
-          style={tab === 'basic' ? styles.bold : styles.alt}>
+          onClick={() => handleTabChange("basic")}
+          style={tab === "basic" ? styles.bold : styles.alt}
+        >
           BASIC DETAILS
         </div>
         /
         <div
-          onClick={() => handleTabChange('order')}
-          style={tab === 'order' ? styles.bold : styles.alt}>
+          onClick={() => handleTabChange("order")}
+          style={tab === "order" ? styles.bold : styles.alt}
+        >
           ORDER DETAILS
         </div>
       </div>
-      {tab === 'basic' && basicDetails(styles)}
-      {tab === 'basic' && <div id='account_title'>ADDRESS</div>}
-      {tab === 'basic' && addressDetails(styles)}
-      {tab === 'order' && orderComponent(styles, showOrder, handleShowDetailView)}
+      {tab === "basic" && basicDetails(userDetails)}
+      {tab === "basic" && <div id="account_title">ADDRESS</div>}
+      {tab === "basic" && addressDetails(userAddress)}
+      {tab === "order" &&
+        orderComponent(styles, showOrder, handleShowDetailView)}
     </div>
   );
 }

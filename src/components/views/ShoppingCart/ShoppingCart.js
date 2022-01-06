@@ -1,72 +1,72 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 
 const useStyle = {
   mainContainer: {
-    height: '100%',
-    width: '100%'
+    height: "100%",
+    width: "100%",
   },
   cartContainer: {
-    margin: 'auto',
-    maxWidth: '720px',
-    padding: '1rem'
+    margin: "auto",
+    maxWidth: "720px",
+    padding: "1rem",
   },
   cartHeading: {
-    display: 'flex',
-    justifyContent: 'space-between'
+    display: "flex",
+    justifyContent: "space-between",
   },
   productContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    borderTop: '1px solid grey',
-    padding: '1rem 0'
+    display: "flex",
+    justifyContent: "space-between",
+    borderTop: "1px solid grey",
+    padding: "1rem 0",
   },
   headingDiv: {
-    width: '9rem'
+    width: "9rem",
   },
   div: {},
   divider: {
-    borderBottom: '2px dashed grey'
+    borderBottom: "2px dashed grey",
   },
   table: {
-    width: '100%'
+    width: "100%",
   },
   tableRow: {},
   tableData: {},
   costColumn: {
-    textAlign: 'right'
+    textAlign: "right",
   },
   button: {
-    background: '#000',
-    color: 'white',
-    width: '100%',
-    height: '2rem',
-    fontSize: '0.7rem',
-    margin: '0.5rem 0'
+    background: "#000",
+    color: "white",
+    width: "100%",
+    height: "2rem",
+    fontSize: "0.7rem",
+    margin: "0.5rem 0",
   },
   redeemContainer: {
-    display: 'flex',
-    justifyContent: 'space-between'
+    display: "flex",
+    justifyContent: "space-between",
   },
   redeemButton: {
-    maxWidth: '20%'
+    maxWidth: "20%",
   },
   input: {
-    width: '75%',
-    height: '2rem',
-    margin: '0.5rem 0',
-    padding: '10px',
-    fontSize: '0.7rem',
-    border: 'none',
-    color: '#000',
-    outline: 'none',
-    boxShadow: 'none',
+    width: "75%",
+    height: "2rem",
+    margin: "0.5rem 0",
+    padding: "10px",
+    fontSize: "0.7rem",
+    border: "none",
+    color: "#000",
+    outline: "none",
+    boxShadow: "none",
     borderRadius: 0,
-    backgroundColor: '#fff'
+    backgroundColor: "#fff",
   },
   imageContainer: {
-    height: '5rem'
-  }
+    height: "5rem",
+  },
 };
 
 const productRow = (item) => {
@@ -117,23 +117,33 @@ export default function ShoppingCart() {
           <table style={useStyle.table}>
             <tr style={useStyle.tableRow}>
               <td style={useStyle.tableData}>ITEMS</td>
-              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>{cartItems.length}</td>
+              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>
+                {cartItems.length}
+              </td>
             </tr>
             <tr>
               <td style={useStyle.tableData}>SUBTOTAL</td>
-              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>₹{totalAmount}</td>
+              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>
+                ₹{totalAmount}
+              </td>
             </tr>
             <tr>
               <td style={useStyle.tableData}>DISCOUNT</td>
-              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>₹0</td>
+              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>
+                ₹0
+              </td>
             </tr>
             <tr>
               <td style={useStyle.tableData}>TAX</td>
-              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>₹{totalTax}</td>
+              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>
+                ₹{totalTax}
+              </td>
             </tr>
             <tr>
               <td style={useStyle.tableData}>SHIPPING</td>
-              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>₹0</td>
+              <td style={{ ...useStyle.tableData, ...useStyle.costColumn }}>
+                ₹0
+              </td>
             </tr>
             <tr>
               <td style={useStyle.tableData}>TOTAL</td>
@@ -144,8 +154,14 @@ export default function ShoppingCart() {
           </table>
         </div>
         <div style={useStyle.redeemContainer}>
-          <input type="text" placeholder="ENTER REDEEM CODE" style={useStyle.input} />
-          <button style={{ ...useStyle.redeemButton, ...useStyle.button }}>APPLY</button>
+          <input
+            type="text"
+            placeholder="ENTER REDEEM CODE"
+            style={useStyle.input}
+          />
+          <button style={{ ...useStyle.redeemButton, ...useStyle.button }}>
+            APPLY
+          </button>
         </div>
         <button style={useStyle.button}>CHECKOUT</button>
       </div>

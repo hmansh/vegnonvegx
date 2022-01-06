@@ -1,60 +1,60 @@
 .signin_container {
-    height: 100%;
-    width: 100%;
-    padding: 1rem;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
 }
 #signin_title {
-    margin: auto;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
-    max-width: 720px;
-    font-size: 1rem;
+  margin: auto;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  max-width: 720px;
+  font-size: 1rem;
 }
 #signin_container {
-    margin: auto;
-    max-width: 720px;
+  margin: auto;
+  max-width: 720px;
 }
 #signin_input {
-    width: 100%;
-    height: 2rem;
-    margin: 0.5rem auto;
-    padding: 10px;
-    font-size: 0.7rem;
-    border: none;
-    color: black;
-    display: block;
-    outline: none;
-    box-shadow: none;
-    border-radius: 0;
-    background-color: white;
+  width: 100%;
+  height: 2rem;
+  margin: 0.5rem auto;
+  padding: 10px;
+  font-size: 0.7rem;
+  border: none;
+  color: black;
+  display: block;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: white;
 }
 #signin_forgetButton {
-    color: blue;
-    width: 50%;
-    height: 2rem;
-    font-size: 0.7rem;
-    text-align: left;
-    background: none;
-    border: none;
-    outline: none;
+  color: blue;
+  width: 50%;
+  height: 2rem;
+  font-size: 0.7rem;
+  text-align: left;
+  background: none;
+  border: none;
+  outline: none;
 }
 #signin_button {
-    color: white;
-    background: black;
-    width: 100%;
-    height: 2rem;
-    font-size: 0.7rem;
-    margin: 0.5rem 0;
+  color: white;
+  background: black;
+  width: 100%;
+  height: 2rem;
+  font-size: 0.7rem;
+  margin: 0.5rem 0;
 }
 #signin_joinContainer {
-    margin: auto;
-    max-width: 720px;
+  margin: auto;
+  max-width: 720px;
 }
 #signin_names {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .signin_name {
-    max-width: 49%;
-    margin: 0;
+  max-width: 49%;
+  margin: 0;
 }

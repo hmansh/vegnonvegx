@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import '../../../style/ProductPage.css';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import "../../../style/ProductPage.css";
 
 export default function ProductPage() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export default function ProductPage() {
 
   const addToCart = () => {
     if (size) {
-      dispatch({ type: 'ADD_TO_CART', payload: productData });
+      dispatch({ type: "ADD_TO_CART", payload: productData });
     }
   };
 
@@ -30,19 +30,24 @@ export default function ProductPage() {
             <div id="ppage_name">{productData.name}</div>
             <div id="ppage_price">₹{productData.price}</div>
             <div id="ppage_desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos tempore
-              similique totam. Nam nesciunt libero consequuntur ipsam optio sint et quo culpa, error
-              laudantium maiores, deserunt corporis aspernatur nemo dolorem. Lorem ipsum dolor sit
-              amet, consectetur adipisicing elit. Dignissimos tempore similique totam. Nam nesciunt
-              libero consequuntur ipsam optio sint et quo culpa, error laudantium maiores, deserunt
-              corporis aspernatur nemo dolorem.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Dignissimos tempore similique totam. Nam nesciunt libero
+              consequuntur ipsam optio sint et quo culpa, error laudantium
+              maiores, deserunt corporis aspernatur nemo dolorem. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit. Dignissimos tempore
+              similique totam. Nam nesciunt libero consequuntur ipsam optio sint
+              et quo culpa, error laudantium maiores, deserunt corporis
+              aspernatur nemo dolorem.
             </div>
           </div>
           <div id="ppage_sizes">
-            {productData.sizes.split(',').map((item) => {
+            {productData.sizes.split(",").map((item) => {
               return (
-                <button onClick={() => handleUpdateShoeSize(item)} id="ppage_sizeButtons">
-                  {item === '' ? 'OUT OF STOCK' : item}
+                <button
+                  onClick={() => handleUpdateShoeSize(item)}
+                  id="ppage_sizeButtons"
+                >
+                  {item === "" ? "OUT OF STOCK" : item}
                 </button>
               );
             })}

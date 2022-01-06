@@ -1,103 +1,108 @@
 .account_container {
-    height: 100%;
-    width: 100%;
-    padding: 1rem;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
 }
 #account_title {
-    margin: auto;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
-    max-width: 720px;
-    font-size: 1rem;
-    display: flex;
+  margin: auto;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  max-width: 720px;
+  font-size: 1rem;
+  display: flex;
 }
-#account_joinContainer{
-    margin: auto;
-    max-width: 720px;
+#account_joinContainer {
+  margin: auto;
+  max-width: 720px;
 }
-#account_signinContainer{
-    margin: auto;
-    max-width: 720px;
+#account_signinContainer {
+  margin: auto;
+  max-width: 720px;
 }
-#account_name{
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
+#account_name {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
-#account_input_half{
-    width: 49%;
-    height: 2rem;
-    padding: 10px;
-    font-size: 0.7rem;
-    border: none;
-    color: black;
-    display: block;
-    outline: none;
-    box-shadow: none;
-    border-radius: 0;
-    background-color: white;
+#account_input_half {
+  width: 49.5%;
+  height: 2rem;
+  padding: 10px;
+  font-size: 0.7rem;
+  border: none;
+  color: black;
+  display: block;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: white;
 }
-#account_input{
-    width: 100%;
-    height: 2rem;
-    margin: 0.5rem 0;
-    padding: 10px;
-    font-size: 0.7rem;
-    color: black;
-    border: none;
-    display: block;
-    outline: none;
-    box-shadow: none;
-    border-radius: 0;
-    background-color: white;
+#account_input {
+  width: 100%;
+  height: 2rem;
+  margin: 0.5rem 0;
+  padding: 10px;
+  font-size: 0.7rem;
+  color: black;
+  border: none;
+  display: block;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: white;
 }
-#account_button{
-    background: black;
-    color: white;
-    width: 100%;
-    height: 2rem;
-    font-size: 0.7rem;
-    margin: 0.5rem 0;
+#account_button {
+  background: black;
+  color: white;
+  width: 100%;
+  height: 2rem;
+  font-size: 0.7rem;
+  margin: 0.5rem 0;
 }
-#account_orderContainer{
-    margin: auto;
-    max-width: 720px;
-    background: white;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+#account_orderContainer {
+  margin: auto;
+  max-width: 720px;
+  background: white;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-#account_orderComponent{}
-#account_orderDetailsRow{
-    display: flex;
-    justify-content: space-between;
+#account_orderComponent {
 }
-#account_productContainer{
-    display: flex;
-    padding: 1rem 0;
-    justify-content: space-between;
+#account_orderDetailsRow {
+  display: flex;
+  justify-content: space-between;
 }
-#account_productImage{
-    width: 30%;
+#account_productContainer {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: space-between;
 }
-#account_productDetails{}
-#account_divider{
-    border-bottom: 2px dashed grey;
+#account_productImage {
+  width: 30%;
 }
-#account_tableContainer{}
-#account_table{
-    width: 100%;
+#account_productDetails {
 }
-#account_tableRow{}
-#account_tableData{}
-#account_costColumn{
-    text-align: right;
+#account_divider {
+  border-bottom: 2px dashed grey;
+}
+#account_tableContainer {
+}
+#account_table {
+  width: 100%;
+}
+#account_tableRow {
+}
+#account_tableData {
+}
+#account_costColumn {
+  text-align: right;
 }
 #account_bold {
-    font-weight: 600;
-    cursor: pointer;
+  font-weight: 600;
+  cursor: pointer;
 }
 #account_alt {
-    cursor: pointer;
+  cursor: pointer;
 }
