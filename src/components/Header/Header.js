@@ -5,6 +5,7 @@ import Person from "../../assets/person.svg";
 import Bag from "../../assets/shopping_bag.svg";
 import { colors } from './../../utils/themeUtils';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const useStyles = {
     headerContainer: {
@@ -55,6 +56,8 @@ const useStyles = {
 
 export default function Header() {
 
+    const userSignedIn = useSelector(state => state.userSignedIn);
+
     const handleWishlistRedirection = () => {
 
     };
@@ -73,10 +76,10 @@ export default function Header() {
                 <div style={useStyles.logoContainer}></div>
             </Link>
             <div style={useStyles.toolsContainer}>
-                <Link to='/account'>
+                <Link to={ userSignedIn ? '/account' : '/signin'}>
                     <div style={useStyles.accountLogo} onClick={handleAccountRedirection}></div>
                 </Link>
-                <Link to='/wishlist'>
+                <Link to={ userSignedIn ? '/wishlist' : '/signin'}>
                     <div style={useStyles.wishlistLogo} onClick={handleWishlistRedirection}></div>
                 </Link>
                 <Link to='/cart'>

@@ -34,12 +34,13 @@ export default function ShoppingCart() {
   return (
     <div className="scart_container">
       <div id="scart_cartContainer">
+        <div id="scart_title">Shopping Cart</div>
         <div id="scart_cartHeading">
-          <div id="scart_headingDiv">PRODUCT</div>
-          <div id="scart_headingDiv">DESCRIPTION</div>
-          <div id="scart_headingDiv">PRICE</div>
-          <div id="scart_headingDiv">SIZE</div>
-          <div id="scart_headingDiv">SUBTOTAL</div>
+          <div id="scart_headingTitle">PRODUCT</div>
+          <div id="scart_headingTitle">DESCRIPTION</div>
+          <div id="scart_headingTitle">PRICE</div>
+          <div id="scart_headingTitle">SIZE</div>
+          <div id="scart_headingTitle">SUBTOTAL</div>
         </div>
         <div id="scart_productTable">
           {cartItems.map((item) => {

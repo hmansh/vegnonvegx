@@ -8,6 +8,12 @@
   max-width: 720px;
   padding: 1rem;
 }
+#scart_title {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
 #scart_cartHeading {
   display: flex;
   justify-content: space-between;
@@ -20,18 +26,28 @@
 }
 #scart_headingDiv {
   width: 9rem;
+  padding: 0.3rem;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+}
+#scart_headingTitle {
+  width: 9rem;
+  padding: 0.3rem;
+  text-overflow: ellipsis;
 }
 #scart_div {
 }
 #scart_divider {
-  border-bottom: 2px dashed grey;
+  border-top: 1px solid grey;
 }
 #scart_table {
   width: 100%;
+  padding: 1rem;
 }
 #scart_tableRow {
 }
 #scart_tableData {
+  padding: 0.1rem 0;
 }
 #scart_costColumn {
   text-align: right;
@@ -39,7 +55,7 @@
 #scart_button {
   background: black;
   color: white;
-  height: 2rem;
+  height: 2.5rem;
   width: 100%;
   font-size: 0.7rem;
   margin: 0.5rem 0;
@@ -52,7 +68,7 @@
   max-width: 20%;
   background: black;
   color: white;
-  height: 2rem;
+  height: 2.5rem;
   width: 100%;
   font-size: 0.7rem;
   margin: 0.5rem 0;
@@ -63,12 +79,17 @@
   margin: 0.5rem 0;
   padding: 10px;
   font-size: 0.7rem;
-  border: none;
+  border: 0 solid #ced4da;
   color: black;
   outline: none;
   box-shadow: none;
   border-radius: 0;
   background-color: white;
+  height: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 #scart_imageContainer {
   height: 5rem;

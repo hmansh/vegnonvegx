@@ -21,6 +21,7 @@ button {
   text-transform: uppercase;
   outline: none;
   border: none;
+  font-size: .875rem;
 }
 ::-webkit-scrollbar {
   width: 10px;

@@ -14,10 +14,15 @@ export default function Wishlist() {
   }, []);
 
   return (
-    <div className="wishlist_container">
-      {data.map((item) => (
-        <Product data={item} />
-      ))}
+    <div className="wishlist_mainContainer">
+      <div id="wishlist_title">
+        Wishlist
+      </div>
+      <div id="wishlist_container">
+        {data.map((item) => (
+          <Product data={item} />
+        ))}
+      </div>
     </div>
   );
 }
