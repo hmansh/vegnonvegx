@@ -2,13 +2,14 @@
   height: 100%;
   width: 100%;
   padding: 1rem;
+
 }
 #signin_title {
-  margin: auto;
   padding-top: 2rem;
   padding-bottom: 0.5rem;
   max-width: 720px;
   font-size: 1rem;
+  margin: auto;
 }
 #signin_container {
   margin: auto;
